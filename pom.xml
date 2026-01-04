@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.gdsdxy</groupId>
+    <artifactId>trading-platform</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <name>TradingPlatform</name>
+    <description>校园二手交易平台聚合项目</description>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- 聚合子模块 -->
+    <modules>
+        <module>Campus-Trade</module>
+    </modules>
+
+    <!-- 公共依赖管理（可选） -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- 如果子模块有共同依赖，可以在这里统一管理版本 -->
+        </dependencies>
+    </dependencyManagement>
+</project>
