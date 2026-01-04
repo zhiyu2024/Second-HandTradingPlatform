@@ -9,13 +9,20 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-// ❌ 删除 @EnableSwagger2
 public class SwaggerConfig {
 
     @Bean
     public GroupedOpenApi apiGroup() {
         return GroupedOpenApi.builder()
-                .group("default")  // 分组名称
+                .group("A-管理员模块")  // 分组名称
+                .packagesToScan("cn.gdsdxy.campustrade")  // 扫描的包路径
+                // .pathsToMatch("/api/**")  // 路径匹配（可选）
+                .build();
+    }
+    @Bean
+    public GroupedOpenApi apiGroup2() {
+        return GroupedOpenApi.builder()
+                .group("B-用户模块")  // 分组名称
                 .packagesToScan("cn.gdsdxy.tradingserver.controller")  // 扫描的包路径
                 // .pathsToMatch("/api/**")  // 路径匹配（可选）
                 .build();
@@ -25,9 +32,9 @@ public class SwaggerConfig {
     public OpenAPI customOpenAPI() {
         // ✅ 新版 Contact 构造方式
         Contact contact = new Contact()
-                .name("加洛斯")
+                .name("校园二手交易平台")
                 .email("xxxxx@qq.com")
-                .url("https://666.com");  // 建议填实际URL
+                .url("https://api/school.com");  // 建议填实际URL
 
         return new OpenAPI()
                 .info(new Info()
